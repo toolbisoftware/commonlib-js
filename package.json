@@ -1,0 +1,44 @@
+{
+  "name": "commonlib",
+  "version": "0.0.0-development",
+  "description": "A JavaScript library with some common functions.",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "*"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "semantic-release": "semantic-release"
+  },
+  "license": "MIT",
+  "author": "toolbisoftware",
+  "keywords": [
+    "toolbi",
+    "toolbisoftware",
+    "library",
+    "javascript",
+    "typescript",
+    "utils",
+    "common"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toolbisoftware/commonlib-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/toolbisoftware/commonlib-js/issues"
+  },
+  "homepage": "https://github.com/toolbisoftware/commonlib-js#readme",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "latest",
+    "rollup": "latest",
+    "rollup-plugin-copy": "latest",
+    "ts-node": "latest",
+    "typescript": "latest"
+  }
+}
