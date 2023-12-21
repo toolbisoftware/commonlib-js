@@ -30,11 +30,11 @@ export function getType(value: any): ExtDataTypes {
   if (Array.isArray(value)) return "array";
 
   const getTypeOfValue = typeof value;
-  if (getTypeOfValue === "undefined") {
+  if (getTypeOfValue === "object") {
     if (value === null) {
       return "null";
     } else {
-      return "undefined";
+      return "object";
     }
   }
 
