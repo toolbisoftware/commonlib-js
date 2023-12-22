@@ -4,7 +4,7 @@
 import { CommonLib } from "../../commonlib.ts";
 import { getType } from "../../functions/getType.ts";
 import { isEmpty } from "../../functions/isEmpty.ts";
-import { ExtDataTypes } from "../../types.ts";
+import type { ExtDataTypes } from "../../types.ts";
 import type {
   Utils_InputCheckerAdvancedType as AdvancedType,
   Utils_InputCheckerInput as Input
