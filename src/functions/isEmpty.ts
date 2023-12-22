@@ -19,7 +19,7 @@ import { getType } from "./getType.ts";
  * @param {IsEmptyOptions["throwError"]} [options.throwError] Whether to throw `Error` if the value is empty. · {@link IsEmptyOptions}.throwError
  * @default
  * false
- * @returns `true` if the value is empty, `false` otherwise. `null` if the type of the value is not supported.
+ * @returns `true` if the value is empty, `false` otherwise. `null` if the type of the value is not supported. · `boolean | null`
  * @example
  * import { isEmpty } from "commonlib";
  *
