@@ -20,6 +20,7 @@ import { getType } from "./getType.ts";
  * @default
  * false
  * @returns `true` if the value is empty, `false` otherwise. `null` if the type of the value is not supported. · `boolean | null`
+ * @throws `Error` if the parameter `options.throwError` is set to `true`.
  * @example
  * import { isEmpty } from "commonlib";
  *
