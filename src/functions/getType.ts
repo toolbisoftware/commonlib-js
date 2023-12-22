@@ -11,8 +11,8 @@ import type { ExtDataTypes } from "../types.ts";
  * typeof value
  * ```
  *
- * @param value The value to get the type from.
- * @returns The type of the provided value.
+ * @param {any} value The value to get the type from. · `any`
+ * @returns {ExtDataTypes} The type of the provided value. · {@link ExtDataTypes}
  * @example
  * import { getType } from "commonlib";
  *
