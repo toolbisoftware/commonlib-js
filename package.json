@@ -1,5 +1,5 @@
 {
-  "name": "commonlib",
+  "name": "commonlib-js",
   "version": "0.0.0-development",
   "description": "A JavaScript library with some common functions.",
   "type": "module",
