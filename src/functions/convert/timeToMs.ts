@@ -2,7 +2,7 @@
 // Check the README file in the project root for more information.
 
 import ms from "ms";
-import { inputCheckerType } from "../private/index.ts";
+import { inputCheckerType } from "../../private/index.ts";
 
 /**
  * Converts time formats into milliseconds.
