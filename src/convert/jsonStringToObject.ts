@@ -6,6 +6,7 @@ import { inputCheckerType } from "../private/index.ts";
 /**
  * Converts (parses) a string into an object.
  *
+ * @alias jsonStrToObj
  * @template T (Optional) The type of the returned object.
  * @param {string} jsonString The string to parse. · `string`
  * @returns {T | null} An object if the string is parseable, `null` otherwise. · `T | null`

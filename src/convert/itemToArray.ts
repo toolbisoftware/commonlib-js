@@ -4,6 +4,7 @@
 /**
  * Converts an item into an array.
  *
+ * @alias itemToArr
  * @template T The type of the returned array.
  * @param {T} item The item to convert. · `T`
  * @returns {T[]} The item in an array. · `T[]`
