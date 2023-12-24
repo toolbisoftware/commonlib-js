@@ -11,6 +11,12 @@ import type { StopwatchReturn } from "../types.ts";
  * 2
  * @return {StopwatchReturn} A new stopwatch with the following methods ({@link StopwatchReturn}):
  * - `getTime`: Gets the time elapsed since the creation of the stopwatch. · `number`
+ * @example
+ * import { stopwatch } from "commonlib-js";
+
+ * const useStopwatch = stopwatch();
+
+ * ...
  * @version 1.0.0
  */
 export function stopwatch(decimals?: number): StopwatchReturn {
