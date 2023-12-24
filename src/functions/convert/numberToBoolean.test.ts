@@ -16,5 +16,7 @@ test("functions/convert/numberToBoolean · 0", () => {
 test("functions/convert/numberToBoolean · invalid", () => {
   expect(() => {
     numberToBoolean(2);
-  }).toThrow();
+  }).toThrow(
+    "Parameter 'number' must be the number '1' for 'true' or '0' for 'false'."
+  );
 });
