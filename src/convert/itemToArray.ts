@@ -21,3 +21,4 @@ export function itemToArray<T>(item: T | T[]): T[] {
     return [item];
   }
 }
+export const itemToArr = itemToArray;
