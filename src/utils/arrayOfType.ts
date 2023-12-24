@@ -7,9 +7,9 @@
  * NOTE! This util is intended to be used with TypeScript. Using it with plain JavaScript doesn't have a purpose.
  *
  * @template T The type to enforce.
- * @returns An array that must contain all the elements of the provided type. · `T[]`
+ * @returns {T[]} An array that must contain all the elements of the provided type. · `T[]`
  * @example
- * import * as commonlib from "commonlib";
+ * import * as commonlib from "commonlib-js";
  *
  * type Words = "hello" | "world";
  *
