@@ -2,7 +2,7 @@
 // Check the README file in the project root for more information.
 
 import { extDataTypes } from "../constants.ts";
-import { inputChecker } from "../private/index.ts";
+import { inputCheckerType } from "../private/index.ts";
 import type { IsEmptyOptions } from "../types.ts";
 import { getType } from "./getType.ts";
 
@@ -19,10 +19,10 @@ import { getType } from "./getType.ts";
  * @param {IsEmptyOptions["throwError"]} [options.throwError] Whether to throw `Error` if the value is empty. · {@link IsEmptyOptions}.throwError
  * @default
  * false
- * @returns `true` if the value is empty, `false` otherwise. `null` if the type of the value is not supported. · `boolean | null`
+ * @returns {boolean | null} `true` if the value is empty, `false` otherwise. `null` if the type of the value is not supported. · `boolean | null`
  * @throws `Error` if the parameter `options.throwError` is set to `true`.
  * @example
- * import { isEmpty } from "commonlib";
+ * import { isEmpty } from "commonlib-js";
  *
  * const userName = "";
  *
@@ -31,7 +31,7 @@ import { getType } from "./getType.ts";
  */
 export function isEmpty(value: any, options?: IsEmptyOptions): boolean | null {
   if (options?.skipInputCheck !== true) {
-    inputChecker([
+    inputCheckerType([
       {
         value: options?.typeOfValue,
         name: "options.typeOfValue",
