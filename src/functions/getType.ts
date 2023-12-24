@@ -14,7 +14,7 @@ import type { ExtDataTypes } from "../types.ts";
  * @param {any} value The value to get the type from. · `any`
  * @returns {ExtDataTypes} The type of the provided value. · {@link ExtDataTypes}
  * @example
- * import { getType } from "commonlib";
+ * import { getType } from "commonlib-js";
  *
  * const user = {
  *   name: "Robert",
