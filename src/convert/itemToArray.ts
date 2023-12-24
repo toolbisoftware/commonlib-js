@@ -13,6 +13,7 @@
  * const message = "hello";
 
  * console.log(itemToArray<string>(message)); // ["hello"]
+ * @version 1.0.0
  */
 export function itemToArray<T>(item: T | T[]): T[] {
   if (Array.isArray(item)) {

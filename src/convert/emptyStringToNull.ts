@@ -17,6 +17,7 @@ import { inputCheckerType } from "../private/index.ts";
 
  * const emptyUserName = "";
  * console.log(emptyStringToNull(emptyUserName)); // null
+ * @version 1.0.0
  */
 export function emptyStringToNull(string: string): string | null {
   inputCheckerType([

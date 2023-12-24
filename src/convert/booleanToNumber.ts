@@ -15,6 +15,7 @@ import { inputCheckerType } from "../private/index.ts";
  * const enabled = true;
 
  * console.log(booleanToNumber(enabled)); // 1
+ * @version 1.0.0
  */
 export function booleanToNumber(boolean: boolean): 1 | 0 {
   inputCheckerType([
