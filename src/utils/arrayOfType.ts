@@ -2,26 +2,21 @@
 // Check the README file in the project root for more information.
 
 /**
- * Returns an array that must contain all the elements of the provided type.
+ * Returns an array with a type that forces you to have all the elements of the type on the array.
  *
- * NOTE! This util is intended to be used with TypeScript. Using it with plain JavaScript doesn't have a purpose.
+ * WARNING! This function only works with TypeScript.
  *
- * @template T The type to enforce.
- * @returns {T[]} An array that must contain all the elements of the provided type. · `T[]`
+ * @template T (`any`) The type to enforce.
+ * @returns {T[]} (`T[]`) The array.
  * @example
- * import * as commonlib from "commonlib-js";
+ * import { arrayOfType } from "commonlib-js";
  *
- * type Words = "hello" | "world";
+ * type Colors = "red" | "green" | "blue";
  *
- * const goodArrayWithWords = commonlib.utils.arrayOfType<Words>()([
- *   "hello",
- *   "world"
- * ]);
+ * const colorArray = arrayOfType<Colors>()(["red", "green", "blue"]);
  *
- * const badArrayWithWords = commonlib.utils.arrayOfType<Words>()(["hello"]);
+ * const badColorArray = arrayOfType<Colors>()(["red", "green"]);
  * // Argument of type 'string[]' is not assignable to parameter of type 'never'.ts(2345)
- *
- * ...
  * @version 1.0.0
  */
 export const arrayOfType =
