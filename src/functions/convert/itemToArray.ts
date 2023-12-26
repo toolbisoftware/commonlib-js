@@ -2,18 +2,20 @@
 // Check the README file in the project root for more information.
 
 /**
- * Converts an item into an array.
+ * Converts an item into an array if it's not an array already, returns the array otherwise.
  *
  * @alias itemToArr
- * @template T The type of the returned array.
- * @param {T} item The item to convert. · `T`
- * @returns {T[]} The item in an array. · `T[]`
+ * @template T (`any`) The type of the provided item.
+ * @param {T | T[]} item (`T | T[]`) The item to convert.
+ * @returns {T[]} (`T[]`) The item as an array.
  * @example
  * import { itemToArray } from "commonlib-js";
-
- * const message = "hello";
-
- * console.log(itemToArray<string>(message)); // ["hello"]
+ *
+ * const text = "hello world";
+ * console.log(itemToArray<string>(text)); // ["hello world"]
+ *
+ * const textArray = ["hello world"];
+ * console.log(itemToArray<string>(textArray)); // ["hello world"]
  * @version 1.0.0
  */
 export function itemToArray<T>(item: T | T[]): T[] {
@@ -23,4 +25,5 @@ export function itemToArray<T>(item: T | T[]): T[] {
     return [item];
   }
 }
+
 export const itemToArr = itemToArray;
