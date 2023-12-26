@@ -5,17 +5,19 @@ import ms from "ms";
 import { inputCheckerType } from "../../private/index.ts";
 
 /**
- * Converts time formats into milliseconds.
- * @param {string | number} value A string with a number and a valid time unit. · `string | number`
- * @returns {number} The provided time in milliseconds. · `number`
+ * Converts time into milliseconds.
+ *
+ * @param {string | number} value (`string | number`) A string containing a number and a valid time unit ([ms](https://www.npmjs.com/package/ms)).
+ * @returns {number} (`number`) The provided time in milliseconds.
  * @example
  * import { timeToMs } from "commonlib-js";
-
- * const timespan = "2d";
- * console.log(timeToMs(timespan)); // 172800000
-
- * const timespanInMilliseconds = 172800000;
- * console.log(timeToMs(timespanInMilliseconds)); // 172800000
+ *
+ * const time = "2d";
+ * console.log(timeToMs(time)); // 172800000
+ *
+ * const timeInMs = 172800000;
+ * console.log(timeToMs(timeInMs)); // 172800000
+ *
  * @version 1.0.0
  */
 export function timeToMs(value: string | number): number {
