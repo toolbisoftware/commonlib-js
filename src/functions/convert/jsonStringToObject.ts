@@ -4,18 +4,26 @@
 import { inputCheckerType } from "../../private/index.ts";
 
 /**
- * Converts (parses) a string into an object.
+ * Converts (parses) a string into an object if parseable, returns `null` otherwise.
  *
  * @alias jsonStrToObj
- * @template T (Optional) The type of the returned object.
- * @param {string} jsonString The string to parse. · `string`
- * @returns {T | null} An object if the string is parseable, `null` otherwise. · `T | null`
+ * @template T [any] The type of the returned object.
+ * @default
+ * object
+ * @param {string} jsonString (`string`) The string to parse.
+ * @returns {T | null} (`T | null`) The parsed string if parseable, `null` otherwise.
  * @example
  * import { jsonStringToObject } from "commonlib-js";
-
+ *
+ * type HelloWorld = {
+ *   hello: string;
+ * };
+ *
  * const jsonString = '{"hello":"world"}';
-
- * console.log(jsonStringToObject(jsonString)); // {hello: "world"}
+ * console.log(jsonStringToObject<HelloWorld>(jsonString)); // {hello: "world"}
+ *
+ * const invalidJsonString = '"hello":"world"}';
+ * console.log(jsonStringToObject<HelloWorld>(invalidJsonString)); // null
  * @version 1.0.0
  */
 export function jsonStringToObject<T = object>(jsonString: string): T | null {
@@ -34,4 +42,5 @@ export function jsonStringToObject<T = object>(jsonString: string): T | null {
     return null;
   }
 }
+
 export const jsonStrToObj = jsonStringToObject;
