@@ -7,14 +7,15 @@ import { inputCheckerType } from "../../private/index.ts";
  * Converts a boolean into a number.
  *
  * @alias boolToNum
- * @param {boolean} boolean The boolean to convert. · `boolean`
- * @returns {1 | 0} `1` if the provided value is `true` or `0` if it's `false`. · `1 | 0`
+ * @param {boolean} boolean (`boolean`) The boolean value to convert.
+ * @returns {1 | 0} (`1 | 0`) `1` if the provided value is `true` or `0` if it's `false`.
  * @example
  * import { booleanToNumber } from "commonlib-js";
-
+ *
  * const enabled = true;
-
+ *
  * console.log(booleanToNumber(enabled)); // 1
+ *
  * @version 1.0.0
  */
 export function booleanToNumber(boolean: boolean): 1 | 0 {
@@ -32,4 +33,5 @@ export function booleanToNumber(boolean: boolean): 1 | 0 {
     return 0;
   }
 }
+
 export const boolToNum = booleanToNumber;
