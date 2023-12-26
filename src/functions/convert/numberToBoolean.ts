@@ -7,14 +7,14 @@ import { inputCheckerType } from "../../private/index.ts";
  * Converts a number into a boolean.
  *
  * @alias numToBool
- * @param {number} number The number to convert. · `number`
- * @returns {boolean} `true` if the provided number is `1` and `false` if it's `0`. · `boolean`
- * @throws `Error` if the provided number is neither `1` nor `0`.
+ * @param {number} number (`number`) The number to convert.
+ * @returns {boolean} (`boolean`) `true` if the provided value is `1` or `false` if it's `0`.
+ * @throws `Error` if the provided value is neither `1` nor `0`.
  * @example
  * import { numberToBoolean } from "commonlib-js";
-
+ *
  * const enabled = 1;
-
+ *
  * console.log(numberToBoolean(enabled)); // true
  * @version 1.0.0
  */
@@ -41,4 +41,5 @@ export function numberToBoolean(number: number): boolean {
     }
   }
 }
+
 export const numToBool = numberToBoolean;
