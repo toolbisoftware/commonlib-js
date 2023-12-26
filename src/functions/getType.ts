@@ -6,24 +6,17 @@ import type { ExtDataTypes } from "../types.ts";
 /**
  * Gets the type of a value.
  *
- * WARNING! The returned value is of type {@link ExtDataTypes}. This function is not the same as using the following:
- * ```ts
- * typeof value
- * ```
+ * WARNING! The returned value is of type {@link ExtDataTypes}. This function does not return the same value as `typeof value` would.
  *
- * @param {any} value The value to get the type from. · `any`
- * @returns {ExtDataTypes} The type of the provided value. · {@link ExtDataTypes}
+ * @param {any} value (`any`) The value to get the type of.
+ * @returns {ExtDataTypes} ({@link ExtDataTypes}) The type of the provided value.
  * @example
  * import { getType } from "commonlib-js";
  *
- * const user = {
- *   name: "Robert",
- *   age: 623
- * };
- * const colors = ["red", "blue"];
+ * const userName = "Robert";
  *
- * console.log(getType(user)); // "object"
- * console.log(getType(colors)); // "array"
+ * console.log(getType(userName)); // "string"
+ *
  * @version 1.0.0
  */
 export function getType(value: any): ExtDataTypes {
