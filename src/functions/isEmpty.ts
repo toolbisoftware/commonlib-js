@@ -9,24 +9,25 @@ import { getType } from "./getType.ts";
 /**
  * Checks if a value is empty according to its type.
  *
- * @param {any} value The value to check if it's empty. · `any`
- * @param {IsEmptyOptions} [options] Options for the function. · {@link IsEmptyOptions}
+ * @param {any} value (`any`) The value to check.
+ * @param {IsEmptyOptions} [options] ({@link IsEmptyOptions}) Additional options for the function.
  * @default
  * undefined
- * @param {IsEmptyOptions["typeOfValue"]} [options.typeOfValue] Extended data type ({@link ExtDataTypes}) of the value. · {@link IsEmptyOptions}.typeOfValue
+ * @param {IsEmptyOptions["typeOfValue"]} [options.typeOfValue] ({@link ExtDataTypes}) Extended data type of the value.
  * @default
  * undefined
- * @param {IsEmptyOptions["throwError"]} [options.throwError] Whether to throw `Error` if the value is empty. · {@link IsEmptyOptions}.throwError
+ * @param {IsEmptyOptions["throwError"]} [options.throwError] (`boolean`) Whether or not to throw an error if the value is empty.
  * @default
  * false
- * @returns {boolean | null} `true` if the value is empty, `false` otherwise. `null` if the type of the value is not supported. · `boolean | null`
- * @throws `Error` if the parameter `options.throwError` is set to `true`.
+ * @returns {boolean | null} (`boolean | null`) `true` if the value is empty, `false` otherwise. `null` if the type of the value is not supported.
  * @example
  * import { isEmpty } from "commonlib-js";
  *
- * const userName = "";
+ * const userName = "Robert";
+ * console.log(isEmpty(userName)); // false
  *
- * console.log(isEmpty(userName)); // true
+ * const userNameEmpty = "";
+ * console.log(isEmpty(userNameEmpty)); // true
  * @version 1.0.0
  */
 export function isEmpty(value: any, options?: IsEmptyOptions): boolean | null {
