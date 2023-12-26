@@ -6,19 +6,20 @@ import { getType } from "../../functions/getType.ts";
 import { isEmpty } from "../../functions/isEmpty.ts";
 import type { ExtDataTypes } from "../../types.ts";
 import type {
-  Utils_InputCheckerAdvancedType as AdvancedType,
-  Utils_InputCheckerInput as Input
+  Utils_InputCheckerEmptyInput as EmptyInput,
+  Utils_InputCheckerTypeAdvancedType as TypeAdvancedType,
+  Utils_InputCheckerTypeInput as TypeInput
 } from "../types.ts";
 
-export function inputChecker(input: Input[]): void {
+export function inputCheckerType(input: TypeInput[]): void {
   if (!CommonLib.getInstance().settings.jsMode) {
     return;
   }
 
-  const checkType = (input_: Input, typeOfInput: ExtDataTypes): void => {
+  const checkType = (input_: TypeInput, typeOfInput: ExtDataTypes): void => {
     const getAdvancedTypes = input_.type.filter((x) => typeof x === "object");
     for (const _ of getAdvancedTypes) {
-      const advancedType = _ as AdvancedType;
+      const advancedType = _ as TypeAdvancedType;
       if (advancedType.values.includes(input_.value)) {
         return;
       }
@@ -42,22 +43,20 @@ export function inputChecker(input: Input[]): void {
     );
   };
 
-  const isEmpty_ = (input_: Input, typeOfInput: ExtDataTypes): void => {
-    const allowEmpty = input_.allowEmpty || false;
-    if (allowEmpty) {
-      return;
-    }
+  for (const input_ of input) {
+    const getTypeOfInput = getType(input_.value);
+    checkType(input_, getTypeOfInput);
+  }
+}
 
-    if (
-      isEmpty(input_.value, { typeOfValue: typeOfInput, skipInputCheck: true })
-    ) {
+export function inputCheckerEmpty(input: EmptyInput[]): void {
+  const isEmpty_ = (input_: EmptyInput): void => {
+    if (isEmpty(input_.value, { skipInputCheck: true })) {
       throw new Error(`Parameter '${input_.name}' cannot be empty.`);
     }
   };
 
   for (const input_ of input) {
-    const getTypeOfInput = getType(input_.value);
-    checkType(input_, getTypeOfInput);
-    isEmpty_(input_, getTypeOfInput);
+    isEmpty_(input_);
   }
 }
