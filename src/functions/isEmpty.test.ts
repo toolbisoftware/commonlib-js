@@ -3,49 +3,78 @@
 
 import { isEmpty } from "./isEmpty.ts";
 
+test("functions/isEmpty · bigint", () => {
+  const run = isEmpty(BigInt(1));
+  expect(run).toBeNull();
+});
+
 test("functions/isEmpty · boolean", () => {
-  const empty = isEmpty(false);
-  expect(empty).toBeNull();
+  const run = isEmpty(true);
+  expect(run).toBeNull();
 });
 
-test("functions/isEmpty · empty number", () => {
-  const empty = isEmpty(NaN);
-  expect(empty).toBeTruthy();
+test("functions/isEmpty · function", () => {
+  const run = isEmpty(() => {});
+  expect(run).toBeNull();
 });
 
-test("functions/isEmpty · empty object", () => {
-  const empty = isEmpty({});
-  expect(empty).toBeTruthy();
+test("functions/isEmpty · symbol", () => {
+  const run = isEmpty(Symbol("hello world"));
+  expect(run).toBeNull();
 });
 
-test("functions/isEmpty · empty string", () => {
-  const empty = isEmpty("");
-  expect(empty).toBeTruthy();
-});
+//
 
 test("functions/isEmpty · number", () => {
-  const empty = isEmpty(1);
-  expect(empty).toBeFalsy();
+  const run = isEmpty(1);
+  expect(run).toBeFalsy();
 });
 
 test("functions/isEmpty · object", () => {
-  const empty = isEmpty({
-    hello: "world"
-  });
-  expect(empty).toBeFalsy();
+  const run = isEmpty({ hello: "world" });
+  expect(run).toBeFalsy();
 });
 
 test("functions/isEmpty · string", () => {
-  const empty = isEmpty("hello world");
-  expect(empty).toBeFalsy();
+  const run = isEmpty("hello world");
+  expect(run).toBeFalsy();
+});
+
+test("functions/isEmpty · array", () => {
+  const run = isEmpty(["hello world"]);
+  expect(run).toBeFalsy();
+});
+
+//
+
+test("functions/isEmpty · empty number", () => {
+  const run = isEmpty(NaN);
+  expect(run).toBeTruthy();
+});
+
+test("functions/isEmpty · empty object", () => {
+  const run = isEmpty({});
+  expect(run).toBeTruthy();
+});
+
+test("functions/isEmpty · empty string", () => {
+  const run = isEmpty("");
+  expect(run).toBeTruthy();
+});
+
+test("functions/isEmpty · empty array", () => {
+  const run = isEmpty([]);
+  expect(run).toBeTruthy();
+});
+
+//
+
+test("functions/isEmpty · undefined", () => {
+  const run = isEmpty(undefined);
+  expect(run).toBeTruthy();
 });
 
 test("functions/isEmpty · null", () => {
-  const empty = isEmpty(null);
-  expect(empty).toBeTruthy();
-});
-
-test("functions/isEmpty · undefined", () => {
-  const empty = isEmpty(undefined);
-  expect(empty).toBeTruthy();
+  const run = isEmpty(null);
+  expect(run).toBeTruthy();
 });
