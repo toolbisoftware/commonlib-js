@@ -3,9 +3,10 @@
 
 import { CommonLib } from "./commonlib.ts";
 import * as functions from "./functions/index.ts";
+import * as utils from "./utils/index.ts";
 
-export default { ...functions };
-export { functions };
+export default { ...functions, ...utils };
+export { functions, utils };
 
 export type * from "./types.ts";
 export type { CommonLib };
