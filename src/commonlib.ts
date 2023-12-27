@@ -8,9 +8,7 @@ export class CommonLib {
   readonly settings: Settings;
 
   private constructor() {
-    this.settings = {
-      jsMode: false
-    };
+    this.settings = {};
   }
 
   public static getInstance(): CommonLib {

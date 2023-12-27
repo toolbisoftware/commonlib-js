@@ -1,8 +1,6 @@
 // Copyright (c) Toolbi Software. All rights reserved.
 // Check the README file in the project root for more information.
 
-import { extDataTypes } from "../constants.ts";
-import { inputCheckerType } from "../private/index.ts";
 import type { IsEmptyOptions } from "../types.ts";
 import { getType } from "./getType.ts";
 
@@ -31,28 +29,7 @@ import { getType } from "./getType.ts";
  * @version 1.0.0
  */
 export function isEmpty(value: any, options?: IsEmptyOptions): boolean | null {
-  if (options?.skipInputCheck !== true) {
-    inputCheckerType([
-      {
-        value: options?.typeOfValue,
-        name: "options.typeOfValue",
-        type: [
-          {
-            name: "ExtDataTypes",
-            values: extDataTypes
-          },
-          "undefined"
-        ]
-      },
-      {
-        value: options?.throwError,
-        name: "options.throwError",
-        type: ["boolean", "undefined"]
-      }
-    ]);
-  }
-
-  const getTypeOfValue = getType(value);
+  const getTypeOfValue = options?.typeOfValue || getType(value);
   switch (getTypeOfValue) {
     case "bigint":
     case "boolean":
@@ -83,6 +60,10 @@ export function isEmpty(value: any, options?: IsEmptyOptions): boolean | null {
     case "null": {
       return true;
     }
+  }
+
+  if (options?.throwError) {
+    throw new Error(`The value cannot be empty.`);
   }
 
   return false;

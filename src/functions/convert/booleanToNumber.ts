@@ -1,8 +1,6 @@
 // Copyright (c) Toolbi Software. All rights reserved.
 // Check the README file in the project root for more information.
 
-import { inputCheckerType } from "../../private/index.ts";
-
 /**
  * Converts a boolean into a number.
  *
@@ -19,14 +17,6 @@ import { inputCheckerType } from "../../private/index.ts";
  * @version 1.0.0
  */
 export function booleanToNumber(boolean: boolean): 1 | 0 {
-  inputCheckerType([
-    {
-      value: boolean,
-      name: "boolean",
-      type: ["boolean"]
-    }
-  ]);
-
   if (boolean) {
     return 1;
   } else {

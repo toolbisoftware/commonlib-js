@@ -2,7 +2,6 @@
 // Check the README file in the project root for more information.
 
 import ms from "ms";
-import { inputCheckerType } from "../../private/index.ts";
 
 /**
  * Converts time into milliseconds.
@@ -21,14 +20,6 @@ import { inputCheckerType } from "../../private/index.ts";
  * @version 1.0.0
  */
 export function timeToMs(value: string | number): number {
-  inputCheckerType([
-    {
-      value,
-      name: "value",
-      type: ["string", "number"]
-    }
-  ]);
-
   if (typeof value === "string") {
     return ms(value);
   } else {

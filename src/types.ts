@@ -5,9 +5,7 @@ import { checkInput, checkInputMulti } from "./functions/checkInput.ts";
 import { checkType, checkTypeMulti } from "./functions/checkType.ts";
 import { setSettings } from "./functions/setSettings.ts";
 
-export interface Settings {
-  jsMode: boolean;
-}
+export interface Settings {}
 
 //
 //
@@ -264,30 +262,6 @@ export interface IsEmptyOptions {
    * false
    */
   throwError?: boolean;
-  /**
-   * Whether or not to skip the internal input checker.
-   *
-   * WARNING! This option is only intended for internal use.
-   * @default
-   * false
-   */
-  skipInputCheck?: boolean;
-}
-
-//
-
-/**
- * Settings to set. Of the {@link setSettings} function.
- */
-export interface SetSettingsSettings {
-  /**
-   * Whether or not to enable JavaScript mode.
-   *
-   * Enables runtime type checking.
-   * @default
-   * false
-   */
-  jsMode?: boolean;
 }
 
 //

@@ -3,8 +3,7 @@
 
 import fs from "fs/promises";
 import path from "node:path";
-import { inputCheckerType } from "../private/index.ts";
-import { GetPathsOptions, GetPathsPath } from "../types.ts";
+import { GetPathsPath } from "../types.ts";
 import { mergePaths } from "./mergePaths.ts";
 
 async function run(
@@ -36,9 +35,6 @@ async function run(
  * Gets the paths of the contents of a directory.
  *
  * @param {string} path (`string`) The path to scan.
- * @param {GetPathsOptions} [options] [{@link GetPathsOptions}] Additional options for the function.
- * @default
- * undefined
  * @returns (Promise<{@link GetPathsPath}[]>) An array with all the paths.
  * @example
  * import { getPaths } from "commonlib-js";
@@ -56,19 +52,6 @@ async function run(
  * // ...
  * @version 1.0.0
  */
-export async function getPaths(
-  path: string,
-  options?: GetPathsOptions
-): Promise<GetPathsPath[]> {
-  if (options?.skipInputCheck !== true) {
-    inputCheckerType([
-      {
-        value: path,
-        name: "path",
-        type: ["string"]
-      }
-    ]);
-  }
-
+export async function getPaths(path: string): Promise<GetPathsPath[]> {
   return await run(path);
 }

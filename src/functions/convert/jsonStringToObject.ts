@@ -1,8 +1,6 @@
 // Copyright (c) Toolbi Software. All rights reserved.
 // Check the README file in the project root for more information.
 
-import { inputCheckerType } from "../../private/index.ts";
-
 /**
  * Converts (parses) a string into an object if parseable, returns `null` otherwise.
  *
@@ -27,14 +25,6 @@ import { inputCheckerType } from "../../private/index.ts";
  * @version 1.0.0
  */
 export function jsonStringToObject<T = object>(jsonString: string): T | null {
-  inputCheckerType([
-    {
-      value: jsonString,
-      name: "jsonString",
-      type: ["string"]
-    }
-  ]);
-
   try {
     const parse = JSON.parse(jsonString);
     return parse;

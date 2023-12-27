@@ -1,8 +1,6 @@
 // Copyright (c) Toolbi Software. All rights reserved.
 // Check the README file in the project root for more information.
 
-import { inputCheckerType } from "../../private/index.ts";
-
 /**
  * Converts a string into `null` if it's empty, returns the string otherwise.
  *
@@ -20,14 +18,6 @@ import { inputCheckerType } from "../../private/index.ts";
  * @version 1.0.0
  */
 export function emptyStringToNull(string: string): string | null {
-  inputCheckerType([
-    {
-      value: string,
-      name: "string",
-      type: ["string"]
-    }
-  ]);
-
   if (string.length) {
     return string;
   } else {

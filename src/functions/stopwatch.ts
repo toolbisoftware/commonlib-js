@@ -1,7 +1,6 @@
 // Copyright (c) Toolbi Software. All rights reserved.
 // Check the README file in the project root for more information.
 
-import { inputCheckerType } from "../private/index.ts";
 import type { StopwatchReturn } from "../types.ts";
 
 /**
@@ -21,18 +20,10 @@ import type { StopwatchReturn } from "../types.ts";
  * @version 1.0.0
  */
 export function stopwatch(decimals?: number): StopwatchReturn {
-  inputCheckerType([
-    { value: decimals, name: "decimals", type: ["number", "undefined"] }
-  ]);
-
   const startTime = performance.now();
   let decimals_: number | undefined = undefined;
 
   const useDecimals = (decimals?: number) => {
-    inputCheckerType([
-      { value: decimals, name: "decimals", type: ["number", "undefined"] }
-    ]);
-
     if (decimals) {
       decimals_ = decimals;
       if (decimals_ < 0 || decimals_ > 20) {
