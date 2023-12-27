@@ -35,7 +35,7 @@ async function run(
 /**
  * Gets the paths of the contents of a directory.
  *
- * @param path (`string`) The path to scan.
+ * @param {string} path (`string`) The path to scan.
  * @param {GetPathsOptions} [options] [{@link GetPathsOptions}] Additional options for the function.
  * @default
  * undefined
