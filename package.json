@@ -37,6 +37,7 @@
   "homepage": "https://github.com/toolbisoftware/commonlib-js#readme",
   "devDependencies": {
     "@rollup/plugin-typescript": "latest",
+    "@types/better-sqlite3": "^7.6.8",
     "@types/jest": "^29.5.11",
     "@types/ms": "^0.7.34",
     "jest": "^29.7.0",
@@ -48,6 +49,9 @@
     "typescript": "latest"
   },
   "dependencies": {
+    "better-sqlite3": "^9.2.2",
+    "chalk": "^5.3.0",
+    "dateformat": "^5.0.3",
     "ms": "^2.1.3"
   }
 }
