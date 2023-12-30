@@ -1,7 +1,7 @@
 // Copyright (c) Toolbi Software. All rights reserved.
 // Check the README file in the project root for more information.
 
-import { GetFileNameInfoReturn } from "../types.ts";
+import type { GetFileNameInfoReturn } from "../types.ts";
 
 /**
  * Gets information about a file name.

@@ -3,7 +3,7 @@
 
 import fs from "fs/promises";
 import path from "node:path";
-import { GetPathsPath } from "../types.ts";
+import type { GetPathsPath } from "../types.ts";
 import { mergePaths } from "./mergePaths.ts";
 
 async function run(
