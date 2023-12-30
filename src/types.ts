@@ -356,3 +356,37 @@ export interface StopwatchReturn {
    */
   getTime: (decimals?: number) => number;
 }
+
+//
+
+/**
+ * Additional options for the {@link sar} function.
+ */
+export interface Express_SarOptions {
+  /**
+   * Internal code of the response.
+   * @default
+   * undefined
+   */
+  code?: number;
+  /**
+   * Internal id of the response's message. Use only alongside `options.message`.
+   * @default
+   * undefined
+   */
+  messageId?: string;
+  /**
+   * Message to send. Use only alongside `options.messageId`.
+   * @default
+   * undefined
+   */
+  message?: string;
+  /**
+   * Content to send.
+   * @default
+   * undefined
+   */
+  content?: object;
+}
+
+export interface Express_SarResponse extends Express_SarOptions {}
