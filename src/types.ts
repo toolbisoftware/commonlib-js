@@ -1,9 +1,12 @@
 // Copyright (c) Toolbi Software. All rights reserved.
 // Check the README file in the project root for more information.
 
+import * as chalk from "chalk";
 import { checkInput, checkInputMulti } from "./functions/checkInput.ts";
 import { checkType, checkTypeMulti } from "./functions/checkType.ts";
-import { setSettings } from "./functions/setSettings.ts";
+import { getFileNameInfo } from "./functions/getFileNameInfo.ts";
+import { getPaths } from "./functions/getPaths.ts";
+import { stopwatch } from "./functions/stopwatch.ts";
 
 export interface Settings {}
 
@@ -292,6 +295,25 @@ export interface CheckTypeMultiReturn {
   valid: CheckTypeMultiItem[];
 }
 
+export interface GenerateIdOptions {
+  characters?: string;
+  maxAttempts?: number;
+}
+
+export interface GenerateIdReturn {
+  getId: () => string;
+  getAttempts: () => number;
+  regenerate: () => void;
+}
+
+//
+
+export interface GetFileNameInfoReturn {
+  full: string;
+  name: string;
+  ext: string;
+}
+
 //
 
 /**
@@ -332,6 +354,87 @@ export interface IsEmptyOptions {
    * false
    */
   throwError?: boolean;
+}
+
+//
+
+export interface LoggerOptions {
+  path?: string;
+  entryLimit?: number;
+  categories?: LoggerCategory[];
+  debug?: boolean;
+}
+
+export interface LoggerLevel {
+  name: LoggerLevels;
+  text: string;
+  bgColor: chalk.BackgroundColorName;
+  fgColor: chalk.ForegroundColorName;
+}
+
+export interface LoggerCategory {
+  name: string;
+  text: string;
+}
+
+export type LoggerLevels =
+  | "debug"
+  | "info"
+  | "done"
+  | "warn"
+  | "error"
+  | "fatal";
+
+export type LoggerDefaultCategories =
+  | "config"
+  | "util"
+  | "controller"
+  | "service"
+  | "database"
+  | "keystore"
+  | "main"
+  | "base"
+  | "core";
+
+export interface LoggerLogOptions<CATEGORIES extends string> {
+  category?: CATEGORIES;
+  error?: string;
+  stopwatch?: StopwatchReturn;
+}
+
+//
+
+export interface ReplaceItem {
+  pattern: string | RegExp;
+  replacement: string;
+}
+
+//
+
+export type ReturnHandlerStates = "running" | "done" | "error";
+
+export interface ReturnHandlerObject<
+  CODES extends string | number,
+  CONTENT extends object | null
+> {
+  state: ReturnHandlerStates;
+  code: CODES | null | undefined;
+  content: CONTENT | null | undefined;
+}
+
+export interface ReturnHandlerReturn<
+  CODES extends string | number,
+  CONTENT extends object | null
+> {
+  get: () => ReturnHandlerObject<CODES, CONTENT>;
+  done: (
+    code?: CODES,
+    content?: CONTENT
+  ) => ReturnHandlerObject<CODES, CONTENT>;
+  error: (
+    code?: CODES,
+    eraseContent?: boolean
+  ) => ReturnHandlerObject<CODES, CONTENT>;
 }
 
 //
