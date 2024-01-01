@@ -6,6 +6,7 @@ import * as functions from "./functions/index.ts";
 import * as utils from "./utils/index.ts";
 
 export default { ...functions, ...utils };
+export * from "./functions/index.ts";
 export { functions, utils };
 
 export type * from "./types.ts";
