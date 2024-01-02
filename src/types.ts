@@ -397,7 +397,7 @@ export type LoggerDefaultCategories =
   | "core";
 
 export interface LoggerLogOptions<CATEGORIES extends string> {
-  category?: CATEGORIES;
+  category?: LoggerDefaultCategories | CATEGORIES;
   error?: string;
   stopwatch?: StopwatchReturn;
 }
