@@ -414,8 +414,8 @@ export interface ReplaceItem {
 export type ReturnHandlerStates = "running" | "done" | "error";
 
 export interface ReturnHandlerObject<
-  CODES extends string | number,
-  CONTENT extends object | null
+  CODES extends string | number = string | number,
+  CONTENT extends object | null = null
 > {
   state: ReturnHandlerStates;
   code: CODES | null | undefined;
@@ -423,8 +423,8 @@ export interface ReturnHandlerObject<
 }
 
 export interface ReturnHandlerReturn<
-  CODES extends string | number = string | number,
-  CONTENT extends object | null = null
+  CODES extends string | number,
+  CONTENT extends object | null
 > {
   get: () => ReturnHandlerObject<CODES, CONTENT>;
   done: (
