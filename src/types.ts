@@ -423,8 +423,8 @@ export interface ReturnHandlerObject<
 }
 
 export interface ReturnHandlerReturn<
-  CODES extends string | number,
-  CONTENT extends object | null
+  CODES extends string | number = string | number,
+  CONTENT extends object | null = null
 > {
   get: () => ReturnHandlerObject<CODES, CONTENT>;
   done: (
